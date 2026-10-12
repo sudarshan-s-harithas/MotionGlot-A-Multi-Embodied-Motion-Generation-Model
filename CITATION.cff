@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Please cite the MotionGlot paper when using this software."
+title: "MotionGlot: A Multi-Embodied Motion Generation Model"
+type: software
+version: 0.1.0
+license: Apache-2.0
+authors:
+  - family-names: Harithas
+    given-names: Sudarshan
+  - family-names: Sridhar
+    given-names: Srinath
+repository-code: "https://github.com/sudarshan-s-harithas/MotionGlot-A-Multi-Embodied-Motion-Generation-Model"
+url: "https://ivl.cs.brown.edu/research/motionglot.html"
+preferred-citation:
+  type: article
+  title: "MotionGlot: A Multi-Embodied Motion Generation Model"
+  authors:
+    - family-names: Harithas
+      given-names: Sudarshan
+    - family-names: Sridhar
+      given-names: Srinath
+  year: 2024
+  journal: "arXiv"
+  identifiers:
+    - type: other
+      value: "arXiv:2410.16623"
+  url: "https://arxiv.org/abs/2410.16623"

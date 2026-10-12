@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "motionglot"
+version = "0.1.0"
+description = "Multi-embodied motion tokenization and GPT-2 instruction training"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+authors = [{name = "Sudarshan Harithas"}, {name = "Srinath Sridhar"}]
+dependencies = ["torch>=1.13,<3", "numpy>=1.23,<2", "transformers==4.44.2", "accelerate==0.33.0", "safetensors>=0.4.3,<1"]
+
+[project.optional-dependencies]
+test = ["pytest==8.3.5"]
+research = ["scipy", "matplotlib", "tqdm", "scikit-learn", "nltk", "rouge-score", "bert-score", "tensorboard", "wandb"]
+
+[project.scripts]
+motionglot = "motionglot.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["motionglot*"]
+
+[tool.setuptools.package-data]
+motionglot = ["resources/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,12 @@
+Give me a gesture that corresponds to, <Caption_Placeholder>
+Show me a sequence of movements that illustrates  Input: <Caption_Placeholder>
+Demonstrate a gesture that captures the essence of  Input: <Caption_Placeholder>
+Demonstrate a motion that symbolizes the Input: <Caption_Placeholder>
+Can you generate a motion that represents the Input: <Caption_Placeholder>?
+Please create a motion for the caption: <Caption_Placeholder>
+Develop a movement that represents  Input: <Caption_Placeholder>
+Generate a motion for the caption:  Input: <Caption_Placeholder>
+Demonstrate a sequence of movements that represents  Input: <Caption_Placeholder>
+Please generate a human motion that matches the tone of <Caption_Placeholder>
+Generate a sequence of movements that represents  Input: <Caption_Placeholder>
+

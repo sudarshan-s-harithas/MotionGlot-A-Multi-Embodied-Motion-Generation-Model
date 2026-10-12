@@ -1,0 +1,13 @@
+MotionGlot: A Multi-Embodied Motion Generation Model
+Sudarshan Harithas and Srinath Sridhar
+
+This release contains VQ-VAE and supporting research code adapted from T2M-GPT.
+T2M-GPT: https://github.com/Mael-zys/T2M-GPT
+Copyright 2023 tencent
+Licensed under the Apache License, Version 2.0.
+
+Release modifications include package-relative imports, portable device handling,
+batched decoding, explicit data manifests, shared vocabulary validation, portable
+training and inference commands, split isolation and padding-mask correction.
+
+Original source hashes and adaptations are recorded in docs/source_manifest.json.

@@ -1,0 +1,254 @@
+{
+    "walks forward": [
+        "Moves ahead.",
+        "Advances forward.",
+        "Proceeds straight.",
+        "Steps forward.",
+        "Walks onward.",
+        "Marches forward."
+    ],
+    "walks backward": [
+        "Moves in reverse.",
+        "Steps back.",
+        "Retraces steps.",
+        "Retreats.",
+        "Reverses course.",
+        "Takes backward steps.",
+        "Moves backward."
+    ],
+    "walks forward keeping left": [
+        "Moves ahead while staying to the left.",
+        "Advances forward, keeping to the left side.",
+        "Proceeds straight, maintaining a position on the left.",
+        "Walks straight ahead, adhering to the left.",
+        "Steps forward, consistently keeping to the left.",
+        "Walks onward, staying on the left.",
+        "Moves ahead, remaining on the left side."
+    ],
+    "walks forward keeping right": [
+        "Moves ahead while staying to the right.",
+        "Advances forward, keeping to the right side.",
+        "Proceeds straight, maintaining a position on the right.",
+        "Walks straight ahead, adhering to the right.",
+        "Steps forward, consistently keeping to the right.",
+        "Walks onward, staying on the right.",
+        "Moves ahead, remaining on the right side."
+    ],
+    "walks forward and turns left": [
+        "Moves forward and then turns left.",
+        "Advances ahead and makes a left turn.",
+        "Proceeds straight and turns left.",
+        "Walks forward and veers left.",
+        "Steps forward and takes a left turn.",
+        "Moves straight ahead and turns left.",
+        "Walks forward and then turns left."
+    ],
+    "walks forward and turns right": [
+        "Moves forward and then turns right.",
+        "Advances ahead and makes a right turn.",
+        "Proceeds straight and turns right.",
+        "Walks forward and veers right.",
+        "Steps forward and takes a right turn.",
+        "Moves straight ahead and turns right.",
+        "Walks forward and then turns right."
+    ],
+    "walks forward and turns around": [
+        "Moves forward and then turns around.",
+        "Advances ahead and makes a turn around.",
+        "Proceeds straight and turns around.",
+        "Walks forward and pivots around.",
+        "Steps forward and turns back around.",
+        "Moves straight ahead and then turns around.",
+        "Walks forward and makes a full turn."
+    ],
+    "walks forward and backward alternately": [
+        "Moves forward and backward in turns.",
+        "Walks alternately forward and backward.",
+        "Steps forward and then backward repeatedly.",
+        "Advances and retreats in alternation.",
+        "Proceeds forward and backward by turns.",
+        "Walks back and forth in sequence.",
+        "Moves back and forth alternately."
+    ],
+    "walks backward and forward alternately": [
+        "Moves backward and forward in turns.",
+        "Walks alternately backward and forward.",
+        "Steps backward and then forward repeatedly.",
+        "Retreats and advances in alternation.",
+        "Proceeds backward and forward by turns.",
+        "Walks forth and back in sequence.",
+        "Moves back and forth alternately."
+    ],
+    "walks forward in a clockwise circle": [
+        "Moves forward in a clockwise circle.",
+        "Walks ahead in a clockwise loop.",
+        "Advances forward in a circular clockwise path.",
+        "Steps forward in a clockwise round.",
+        "Proceeds in a clockwise circle while walking.",
+        "Walks in a forward motion along a clockwise circle.",
+        "Moves in a clockwise circle, walking forward."
+    ],
+    "walks forward in a counter-clockwise circle": [
+        "Moves forward in a counter-clockwise circle.",
+        "Walks ahead in a counter-clockwise loop.",
+        "Advances forward in a circular counter-clockwise path.",
+        "Steps forward in a counter-clockwise round.",
+        "Proceeds in a counter-clockwise circle while walking.",
+        "Walks in a forward motion along a counter-clockwise circle.",
+        "Moves in a counter-clockwise circle, walking forward."
+    ],
+    "walks backward in a clockwise circle": [
+        "Moves backward in a clockwise circle.",
+        "Walks backward in a clockwise loop.",
+        "Steps backward in a circular clockwise path.",
+        "Retreats backward in a clockwise round.",
+        "Proceeds in a clockwise circle while walking backward.",
+        "Walks in a backward motion along a clockwise circle.",
+        "Moves in a clockwise circle, walking backward."
+    ],
+    "walks backward in a counter-clockwise circle": [
+        "Moves backward in a counter-clockwise circle.",
+        "Walks backward in a counter-clockwise loop.",
+        "Steps backward in a circular counter-clockwise path.",
+        "Retreats backward in a counter-clockwise round.",
+        "Proceeds in a counter-clockwise circle while walking backward.",
+        "Walks in a backward motion along a counter-clockwise circle.",
+        "Moves in a counter-clockwise circle, walking backward."
+    ],
+    "turns left and continues forward": [
+        "Makes a left turn and continues forward.",
+        "Turns left and moves ahead.",
+        "Pivots left and advances forward.",
+        "Turns to the left and keeps moving forward.",
+        "Veers left and proceeds straight.",
+        "Takes a left turn and keeps walking forward.",
+        "Turns left and continues onward."
+    ],
+    "turns right and continues forward": [
+        "Makes a right turn and continues forward.",
+        "Turns right and moves ahead.",
+        "Pivots right and advances forward.",
+        "Turns to the right and keeps moving forward.",
+        "Veers right and proceeds straight.",
+        "Takes a right turn and keeps walking forward.",
+        "Turns right and continues onward."
+    ],
+    "turns right and walks backward": [
+        "Makes a right turn and walks backward.",
+        "Turns right and moves in reverse.",
+        "Pivots right and steps backward.",
+        "Turns to the right and walks backward.",
+        "Veers right and retreats backward.",
+        "Takes a right turn and walks in reverse.",
+        "Rotates right and walks backward."
+    ],
+    "turns left and walks backward": [
+        "Makes a left turn and walks backward.",
+        "Turns left and moves in reverse.",
+        "Turns left and steps backward.",
+        "Veers left and walks backward.",
+        "Takes a left turn and retreats backward.",
+        "Spins left and walks in reverse.",
+        "Rotates left and steps backward."
+    ],
+    "walks backward keeping left": [
+        "Moves backward while staying to the left.",
+        "Walks in reverse, keeping to the left side.",
+        "Steps backward, maintaining a position on the left.",
+        "Walks backward and stays on the left.",
+        "Moves in reverse, adhering to the left.",
+        "Retreats backward, consistently keeping to the left.",
+        "Walks backward, remaining on the left side."
+    ],
+    "walks backward keeping right": [
+        "Moves backward while staying to the right.",
+        "Walks in reverse, keeping to the right side.",
+        "Steps backward, maintaining a position on the right.",
+        "Walks backward and stays on the right.",
+        "Moves in reverse, adhering to the right.",
+        "Retreats backward, consistently keeping to the right.",
+        "Walks backward, remaining on the right side."
+    ],
+    "walks backward and turns left": [
+        "Moves backward and then turns left.",
+        "Walks in reverse and makes a left turn.",
+        "Steps backward and pivots left.",
+        "Retreats backward and veers left.",
+        "Moves in reverse and turns to the left.",
+        "Walks backward and shifts left.",
+        "Retreats in reverse and takes a left turn."
+    ],
+    "walks backward and turns right": [
+        "Moves backward and then turns right.",
+        "Walks in reverse and makes a right turn.",
+        "Steps backward and pivots right.",
+        "Retreats backward and veers right.",
+        "Moves in reverse and turns to the right.",
+        "Walks backward and shifts right.",
+        "Retreats in reverse and takes a right turn."
+    ],
+    "walks sideways to the right": [
+        "Moves sideways to the right.",
+        "Walks to the right side.",
+        "Steps sideways to the right.",
+        "Shifts sideways to the right.",
+        "Sidesteps to the right.",
+        "Slides to the right.",
+        "Moves laterally to the right."
+    ],
+    "walks sideways to the left": [
+        "Moves sideways to the left.",
+        "Walks to the left side.",
+        "Steps sideways to the left.",
+        "Shifts sideways to the left.",
+        "Sidesteps to the left.",
+        "Slides to the left.",
+        "Moves laterally to the left."
+    ],
+    "walks forward and then steps to the right": [
+        "Moves forward and then steps to the right.",
+        "Walks ahead and then shifts to the right.",
+        "Advances forward and then steps to the right.",
+        "Proceeds straight and then moves to the right.",
+        "Walks forward and then veers to the right.",
+        "Steps forward and then sidesteps to the right.",
+        "Walks onward and then moves right."
+    ],
+    "walks forward and then steps to the left": [
+        "Moves forward and then steps to the left.",
+        "Walks ahead and then shifts to the left.",
+        "Advances forward and then steps to the left.",
+        "Proceeds straight and then moves to the left.",
+        "Walks forward and then veers to the left.",
+        "Steps forward and then sidesteps to the left.",
+        "Walks onward and then moves left."
+    ],
+    "walks backward and then steps to the right": [
+        "Moves backward and then steps to the right.",
+        "Walks in reverse and then shifts to the right.",
+        "Steps backward and then moves to the right.",
+        "Retreats backward and then veers to the right.",
+        "Walks backward and then sidesteps to the right.",
+        "Moves in reverse and then steps to the right.",
+        "Walks backward and then shifts right."
+    ],
+    "walks backward and then steps to the left": [
+        "Moves backward and then steps to the left.",
+        "Walks in reverse and then shifts to the left.",
+        "Steps backward and then moves to the left.",
+        "Retreats backward and then veers to the left.",
+        "Walks backward and then sidesteps to the left.",
+        "Moves in reverse and then steps to the left.",
+        "Walks backward and then shifts left."
+    ],
+    "Spins on the spot": [
+        "Rotates in place.",
+        "Twirls on the spot.",
+        "Spins in place.",
+        "Turns around on the spot.",
+        "Pivots on the spot.",
+        "Whirls around in place.",
+        "Spins around where they stand."
+    ], 
+    "Does Not move": []
+}

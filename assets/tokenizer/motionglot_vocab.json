@@ -1,0 +1,7 @@
+{
+  "vocab_size": 51694,
+  "human_codes": 512,
+  "robot_codes": 128,
+  "goal_codes": 784,
+  "fingerprint": "150c7bea17bedbd2c47edda02a98772e46b456d40b7eb97b2ebba5adfc4204c7"
+}

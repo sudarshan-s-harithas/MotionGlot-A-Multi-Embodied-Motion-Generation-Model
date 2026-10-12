@@ -1,0 +1,628 @@
+[
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/vqvae.py",
+    "destination": "motionglot/models/vqvae.py",
+    "source_sha256": "10907fd73802876a0e467392dd3bc15df5ce43d5f253fa743b902a354a8e47de",
+    "changes": [
+      "Package-relative imports; preserve batch dimension when decoding codes"
+    ],
+    "release_sha256": "a91d4d803a922fa091735bd2dc1da599945d9e806e0c85a6f4683e3a99d7ca4f"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/encdec.py",
+    "destination": "motionglot/models/encdec.py",
+    "source_sha256": "f07cd0048f7018d189baa1606b1b5078febf74f5322779fd281b50cf19facd01",
+    "changes": [
+      "Package-relative import"
+    ],
+    "release_sha256": "f851f71ddc40178a55c90fafaba71a39f103bb6eb67bf51bfcf95687ed90c4d4"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/resnet.py",
+    "destination": "motionglot/models/resnet.py",
+    "source_sha256": "f5e79053ca6b5bf4c896dbb7ce97c472f8e996d0104463fb5af5cca05cea2cd5",
+    "changes": [],
+    "release_sha256": "f5e79053ca6b5bf4c896dbb7ce97c472f8e996d0104463fb5af5cca05cea2cd5"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/quantize_cnn.py",
+    "destination": "motionglot/models/quantize_cnn.py",
+    "source_sha256": "3a0db6eba44822dd86bd28b89492ec3f8cda5a3488f5838140a2a9e9f628b595",
+    "changes": [
+      "Allocate codebook buffer on CPU; model.to(device) chooses device"
+    ],
+    "release_sha256": "530e70f8588b17731cbe5f60c9724bcc1439968459e3afaa91521de93d955fef"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/tokenize_motion.py",
+    "destination": "research/tokenizer/tokenize_motion.py",
+    "source_sha256": "1ea875356eddfbbde115720c6c95e0dd9f733696a217c41532e82c771ae0aff7",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "403b45fb21bd34f2ea5182ab8099a98f039d7d2b548967071af8dc2dea74e716"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/tokenize_motion2.py",
+    "destination": "research/tokenizer/tokenize_motion2.py",
+    "source_sha256": "247939e283a0046a0b02eb38a5b71d86a2ca7a6865e9636b8845320f19685cad",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "f5fd2a2122f434d198782ff595655acef80655db0ad3dadd5df33e1ab6a3710c"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/tokenize_robot_trajectories.py",
+    "destination": "research/tokenizer/tokenize_robot_trajectories.py",
+    "source_sha256": "0f44b3fe05d20c77e05d73b5c5c751030c66b7a9a654a97d0707feead267be16",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "a295d4a0f6533359ef3795933fa9877bed9cd0eae3a60c1a6c9832676758405a"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/post_process.py",
+    "destination": "research/tokenizer/post_process.py",
+    "source_sha256": "8ed64c45d1b75c7871e203a09dab7ecb877051f94a290fb23601c5eb162c8b60",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "bba07ed4817fceeec9ae61d224dd6317ed3e02b8226f98bd5539eee012f154d4"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/generate_human_motion.py",
+    "destination": "research/tokenizer/generate_human_motion.py",
+    "source_sha256": "5b5da5bf420f2e43ce59c4f94ffdf75d92c13766ef395c45fcb05ec09e047e28",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "b0302dedb57a239f8b1116f3277afe5c348ad8374e7f61b1b00e0af7d0e786e5"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/generate_robot_motion.py",
+    "destination": "research/tokenizer/generate_robot_motion.py",
+    "source_sha256": "fb9e292b97df17e7a9ff5b9137b396839338fde49565a9774c7b5b92dd1152e0",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "5714afdb0e7c326d40e6a49fc70e41b0ba958b4f9a683610d14e8fb9f5131445"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/generate_goal_motion.py",
+    "destination": "research/tokenizer/generate_goal_motion.py",
+    "source_sha256": "cd8625b4d1bc1bba5c5b21fe18c9ff8d83c1b800ad836c0d973d7d138e505480",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "5cfb26f8bea7783fa748d735827eb9cea8c6fe469cfdaab5be8ee3c29e1cb375"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/eval_m2t.py",
+    "destination": "research/tokenizer/eval_m2t.py",
+    "source_sha256": "a3ead372023e2ebb71f83dbe93b6c7e1f2e1e5fa47a6ca1a090e0c27c328ef2c",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "c9688650c3a1a9df8816b4e53b36207ca9ab3c3078b498a64391ad950fe8d4cc"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/eval_robot_m2t.py",
+    "destination": "research/tokenizer/eval_robot_m2t.py",
+    "source_sha256": "173b94416a1d7e2dde4f6318957324e53b4aae877a0b5c15de7065034452bfc0",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "da95cce27e2f5bfb9792fdd6c7292d49c45d66557554058c43205b2559142e41"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/eval_t2m.py",
+    "destination": "research/tokenizer/eval_t2m.py",
+    "source_sha256": "bee6b84f1678076569f9dbeddf3ec0143330a563c4ebc465159837fc1ca321bb",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "bcb81639c4dd42604b77e449c8af49c25672babeca5b5f6dde126df988af5c02"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/eval_t2mt.py",
+    "destination": "research/tokenizer/eval_t2mt.py",
+    "source_sha256": "03bc29fc32596a4ec075444ae205509053a7170e27aff92d23964186be502034",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "5fb48b5a28d85af882e7fc7491a11197f91628f3e04e8d0e0fa26d228f3c4d64"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/generate_symantic_transfer.py",
+    "destination": "research/tokenizer/generate_symantic_transfer.py",
+    "source_sha256": "d3070b7d6a8b62117d6102600f678487d01795b75e76a2467546abdaf7a97974",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "974364b144de85d822a4d986c4dd30e7f53426d01e06d4c39d1e6279439b4b8c"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/train_classifier.py",
+    "destination": "research/tokenizer/train_classifier.py",
+    "source_sha256": "c22bf38a1352b24d5954ddf85c41a51cc236aa7a446a1854dac11f02e50ffba8",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "83fe8caa7c1856e6bc5e2ed0b47745290bf604137560733b07dd91c533ac3c26"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/dataset/dataset_qa.py",
+    "destination": "research/tokenizer/dataset/dataset_qa.py",
+    "source_sha256": "e684035b8831065e4eabd81994bd001c1164ac8fbefd2a205548f5448f1fdad2",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "c963a77166d1a9b8e8fff1458486bbe5371ae55a5a28d9639faab510bb6cb5fe"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/dataset/dataset_Egpt.py",
+    "destination": "research/tokenizer/dataset/dataset_Egpt.py",
+    "source_sha256": "bad2eec25664b2827941bd78067d63eaceb5828cbed73a09f75d540e9c8d4482",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "78d3073fe94e5780c4a12f52e9c782ca8407161fa6a3f1ab8347d0d85be08a65"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/dataset/dataset_tokenize.py",
+    "destination": "research/tokenizer/dataset/dataset_tokenize.py",
+    "source_sha256": "22746ee5b794895048308d6e4fa7cca23ae69253e7eba89f1a1d22898809553b",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "72aacd5b11a59764eedc46b8537b41a63e75d847f01a1b62c8e75d3d3cf0fb07"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/t2m_trans.py",
+    "destination": "research/tokenizer/models/t2m_trans.py",
+    "source_sha256": "73352c3269392c81e4dc1b74896310942d4f640e64677d0b001a836b004f3614",
+    "changes": [],
+    "release_sha256": "73352c3269392c81e4dc1b74896310942d4f640e64677d0b001a836b004f3614"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/evaluator_wrapper.py",
+    "destination": "research/tokenizer/models/evaluator_wrapper.py",
+    "source_sha256": "baac8a9483e714dcf68a434eeea39947b65084067ddaab053a20d1df69bc2e11",
+    "changes": [],
+    "release_sha256": "baac8a9483e714dcf68a434eeea39947b65084067ddaab053a20d1df69bc2e11"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/encdec.py",
+    "destination": "research/tokenizer/models/encdec.py",
+    "source_sha256": "f07cd0048f7018d189baa1606b1b5078febf74f5322779fd281b50cf19facd01",
+    "changes": [],
+    "release_sha256": "f07cd0048f7018d189baa1606b1b5078febf74f5322779fd281b50cf19facd01"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/pos_encoding.py",
+    "destination": "research/tokenizer/models/pos_encoding.py",
+    "source_sha256": "498ed5d3ca230edadd240ea1c0c91d3acf3dd38b305df030d558487faf03a936",
+    "changes": [],
+    "release_sha256": "498ed5d3ca230edadd240ea1c0c91d3acf3dd38b305df030d558487faf03a936"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/quantize_cnn.py",
+    "destination": "research/tokenizer/models/quantize_cnn.py",
+    "source_sha256": "3a0db6eba44822dd86bd28b89492ec3f8cda5a3488f5838140a2a9e9f628b595",
+    "changes": [],
+    "release_sha256": "3a0db6eba44822dd86bd28b89492ec3f8cda5a3488f5838140a2a9e9f628b595"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/vqvae.py",
+    "destination": "research/tokenizer/models/vqvae.py",
+    "source_sha256": "10907fd73802876a0e467392dd3bc15df5ce43d5f253fa743b902a354a8e47de",
+    "changes": [],
+    "release_sha256": "10907fd73802876a0e467392dd3bc15df5ce43d5f253fa743b902a354a8e47de"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/modules.py",
+    "destination": "research/tokenizer/models/modules.py",
+    "source_sha256": "485ef91f38a6fa7b510e7763814ae49e0be35fef693d4978d06fce2216e5bff6",
+    "changes": [],
+    "release_sha256": "485ef91f38a6fa7b510e7763814ae49e0be35fef693d4978d06fce2216e5bff6"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/models/resnet.py",
+    "destination": "research/tokenizer/models/resnet.py",
+    "source_sha256": "f5e79053ca6b5bf4c896dbb7ce97c472f8e996d0104463fb5af5cca05cea2cd5",
+    "changes": [],
+    "release_sha256": "f5e79053ca6b5bf4c896dbb7ce97c472f8e996d0104463fb5af5cca05cea2cd5"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/options/option_transformer.py",
+    "destination": "research/tokenizer/options/option_transformer.py",
+    "source_sha256": "d0ceb806403c6ed6853b6430d2f9b867ae0320af6a46e183af380d045d4cb210",
+    "changes": [],
+    "release_sha256": "d0ceb806403c6ed6853b6430d2f9b867ae0320af6a46e183af380d045d4cb210"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/options/option_vq.py",
+    "destination": "research/tokenizer/options/option_vq.py",
+    "source_sha256": "0200cbfdb9ab80929d462a85bf421cb89aeb41303511406d4646365fd4407226",
+    "changes": [],
+    "release_sha256": "0200cbfdb9ab80929d462a85bf421cb89aeb41303511406d4646365fd4407226"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/options/get_eval_option.py",
+    "destination": "research/tokenizer/options/get_eval_option.py",
+    "source_sha256": "bc3596dc7c2cbbc2d6501374aac1578557a36d02e8bd4ab7e48151342d2f2c07",
+    "changes": [],
+    "release_sha256": "bc3596dc7c2cbbc2d6501374aac1578557a36d02e8bd4ab7e48151342d2f2c07"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/utils/losses.py",
+    "destination": "research/tokenizer/utils/losses.py",
+    "source_sha256": "b48ae1f4204302d0c260910303512089e739e2ce5276f754572496b252045914",
+    "changes": [],
+    "release_sha256": "b48ae1f4204302d0c260910303512089e739e2ce5276f754572496b252045914"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/utils/word_vectorizer.py",
+    "destination": "research/tokenizer/utils/word_vectorizer.py",
+    "source_sha256": "fbfb56d795f2b1ddb99bbf60a097a600a3dfd2275cc541b1dce0a57df787bbdf",
+    "changes": [],
+    "release_sha256": "fbfb56d795f2b1ddb99bbf60a097a600a3dfd2275cc541b1dce0a57df787bbdf"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/utils/rotation_conversions.py",
+    "destination": "research/tokenizer/utils/rotation_conversions.py",
+    "source_sha256": "fc1f11ab125e37b8e268d4e2febf0e0699cdaa324b4a05123dac764ade988699",
+    "changes": [],
+    "release_sha256": "fc1f11ab125e37b8e268d4e2febf0e0699cdaa324b4a05123dac764ade988699"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/utils/paramUtil.py",
+    "destination": "research/tokenizer/utils/paramUtil.py",
+    "source_sha256": "fe0265f3dcd0d466690d816eae973fcece145f64551cef7e46fed7ef3de80d34",
+    "changes": [],
+    "release_sha256": "fe0265f3dcd0d466690d816eae973fcece145f64551cef7e46fed7ef3de80d34"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/utils/config.py",
+    "destination": "research/tokenizer/utils/config.py",
+    "source_sha256": "5bfa8a5d1cfef8a2cc52ef2e205e8824d5d5542280128913142a51df84444f86",
+    "changes": [],
+    "release_sha256": "5bfa8a5d1cfef8a2cc52ef2e205e8824d5d5542280128913142a51df84444f86"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/utils/quaternion.py",
+    "destination": "research/tokenizer/utils/quaternion.py",
+    "source_sha256": "ef9a6b54d26e079fa404bb74690bc7b2bff841331cea55f88e412e1e75a066fc",
+    "changes": [],
+    "release_sha256": "ef9a6b54d26e079fa404bb74690bc7b2bff841331cea55f88e412e1e75a066fc"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/utils/eval_trans.py",
+    "destination": "research/tokenizer/utils/eval_trans.py",
+    "source_sha256": "138d1b138008a8f9a11cfa5dbf38f82653f5013a71ebb6c7a84b58f66e0b110f",
+    "changes": [],
+    "release_sha256": "138d1b138008a8f9a11cfa5dbf38f82653f5013a71ebb6c7a84b58f66e0b110f"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/utils/utils_model.py",
+    "destination": "research/tokenizer/utils/utils_model.py",
+    "source_sha256": "ae450f8d3b28ecc0048c6be9725f0e0bc1f3211c2b9458140da95420a617dec5",
+    "changes": [],
+    "release_sha256": "ae450f8d3b28ecc0048c6be9725f0e0bc1f3211c2b9458140da95420a617dec5"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/utils/skeleton.py",
+    "destination": "research/tokenizer/utils/skeleton.py",
+    "source_sha256": "396f369089bd6da64c92c8b8ee1653caaad24fdd1f08d8c512e0b92eca8d29ab",
+    "changes": [],
+    "release_sha256": "396f369089bd6da64c92c8b8ee1653caaad24fdd1f08d8c512e0b92eca8d29ab"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/utils/motion_process.py",
+    "destination": "research/tokenizer/utils/motion_process.py",
+    "source_sha256": "8adc7d6ddd850ad8ebe1ef8868077f79e04277099ce58efed37aa7f4ce119332",
+    "changes": [],
+    "release_sha256": "8adc7d6ddd850ad8ebe1ef8868077f79e04277099ce58efed37aa7f4ce119332"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/utils/robot_word_vectorizer.py",
+    "destination": "research/tokenizer/utils/robot_word_vectorizer.py",
+    "source_sha256": "77534cae6abecfbc8631b6fa75a45fbe4328e0c410fa86c243b32b06948f6e4c",
+    "changes": [],
+    "release_sha256": "77534cae6abecfbc8631b6fa75a45fbe4328e0c410fa86c243b32b06948f6e4c"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/process_robot_motion/data_process_utils.py",
+    "destination": "research/tokenizer/process_robot_motion/data_process_utils.py",
+    "source_sha256": "4d6b8d1ec5430bbd93a4dbc651cfe6b1a79d6c7025b800bca469e584902480b6",
+    "changes": [],
+    "release_sha256": "4d6b8d1ec5430bbd93a4dbc651cfe6b1a79d6c7025b800bca469e584902480b6"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/process_robot_motion/motion_features.py",
+    "destination": "research/tokenizer/process_robot_motion/motion_features.py",
+    "source_sha256": "83a2f20085f2759e87b343113ac059cef576e75fef17bf4b13ac7feab697cd5b",
+    "changes": [],
+    "release_sha256": "83a2f20085f2759e87b343113ac059cef576e75fef17bf4b13ac7feab697cd5b"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/process_robot_motion/create_robot_motion_images.py",
+    "destination": "research/tokenizer/process_robot_motion/create_robot_motion_images.py",
+    "source_sha256": "5741221c5767fa0b4eb9ec5a6e80ce358856eb897079cd7845d6ac38286c40ee",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "c937246616c139416a71a5229050371314cef07af464cbde0cc867ca61e064d3"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/process_robot_motion/RAE.py",
+    "destination": "research/tokenizer/process_robot_motion/RAE.py",
+    "source_sha256": "000994b1ab45ff2142c7ac6ae6cf2ae73a0d5adfbe9d83ac0228390f500f4f32",
+    "changes": [],
+    "release_sha256": "000994b1ab45ff2142c7ac6ae6cf2ae73a0d5adfbe9d83ac0228390f500f4f32"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/visualization/plot_3d_global.py",
+    "destination": "research/tokenizer/visualization/plot_3d_global.py",
+    "source_sha256": "ceb3760db3849e7a028264d57ddcacb31c4e33b1db68168aee71784f19cea15a",
+    "changes": [],
+    "release_sha256": "ceb3760db3849e7a028264d57ddcacb31c4e33b1db68168aee71784f19cea15a"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/prefix_template.txt",
+    "destination": "research/tokenizer/prefix_template.txt",
+    "source_sha256": "0f2b2ce478e281073ea9802e7a278a09dd1efea5f44106e6d7320679cc21bfbd",
+    "changes": [],
+    "release_sha256": "0f2b2ce478e281073ea9802e7a278a09dd1efea5f44106e6d7320679cc21bfbd"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/quantizer_config.ini",
+    "destination": "research/tokenizer/quantizer_config.ini",
+    "source_sha256": "b5454cec3c6079bf4bd3ff4f758ed1f15ee1ee88dc83b89a5bba5245f3399c28",
+    "changes": [],
+    "release_sha256": "b5454cec3c6079bf4bd3ff4f758ed1f15ee1ee88dc83b89a5bba5245f3399c28"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/process_robot_motion/text_templates.json",
+    "destination": "research/tokenizer/process_robot_motion/text_templates.json",
+    "source_sha256": "9c117957349d8fd2e04b6b758e25825225ecbee5443824cb711b0f69548e850a",
+    "changes": [],
+    "release_sha256": "9c117957349d8fd2e04b6b758e25825225ecbee5443824cb711b0f69548e850a"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/process_robot_motion/mirror_map.json",
+    "destination": "research/tokenizer/process_robot_motion/mirror_map.json",
+    "source_sha256": "57c831d005dea7cc5b2a0f5abcd4193c18cad85f4e1dc1dee4db2341c87fd319",
+    "changes": [],
+    "release_sha256": "57c831d005dea7cc5b2a0f5abcd4193c18cad85f4e1dc1dee4db2341c87fd319"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/process_robot_motion/concept_map.json",
+    "destination": "research/tokenizer/process_robot_motion/concept_map.json",
+    "source_sha256": "d3c4d2caf73c7c07ec9fb7a54ff4aa278dce8393433bdca4109c3faca326ce12",
+    "changes": [],
+    "release_sha256": "d3c4d2caf73c7c07ec9fb7a54ff4aa278dce8393433bdca4109c3faca326ce12"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/train_motionglot/train.py",
+    "destination": "research/train_motionglot/train.py",
+    "source_sha256": "82a777f7034f4dec06ced6e218cc11cf81870c732dc868cbf4eca40a98e214aa",
+    "changes": [
+      "Personal/cluster absolute paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "e329fa47fa57f2ed31eea29840a5e7f26a55e2794d46a8de9da1965fc5d755b5"
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/train_vq.py",
+    "destination": "research/human_vq/train_vq.py",
+    "source_sha256": "9beb6350a245cc1a76be8573e8e6a3f929cdf77fae72903d0b3e79ace0022aea",
+    "changes": [],
+    "release_sha256": "9beb6350a245cc1a76be8573e8e6a3f929cdf77fae72903d0b3e79ace0022aea"
+  },
+  {
+    "source": "LAM/motioinglot/tokenizer/process_robot_motion/sort_robot_dataset.py",
+    "destination": "research/tokenizer/process_robot_motion/sort_robot_dataset.py",
+    "source_sha256": "68d834daea4bc2163f0a9c76a324c55a1b71f3def64aee6120a4ff5266fa5e6d",
+    "changes": [
+      "Personal/cluster paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ],
+    "release_sha256": "090e7fb515560a69086c8a5e9fa083dbaafb43fed1be69816cf3054f3b81fedb"
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/process_robot_motion/mirror_map.json",
+    "destination": "motionglot/resources/mirror_map.json",
+    "source_sha256": "57c831d005dea7cc5b2a0f5abcd4193c18cad85f4e1dc1dee4db2341c87fd319",
+    "release_sha256": "57c831d005dea7cc5b2a0f5abcd4193c18cad85f4e1dc1dee4db2341c87fd319",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct19/motionglot/tokenizer/process_robot_motion/text_templates.json",
+    "destination": "motionglot/resources/text_templates.json",
+    "source_sha256": "9c117957349d8fd2e04b6b758e25825225ecbee5443824cb711b0f69548e850a",
+    "release_sha256": "9c117957349d8fd2e04b6b758e25825225ecbee5443824cb711b0f69548e850a",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/dataset/dataset_TM_train.py",
+    "destination": "research/human_vq/dataset/dataset_TM_train.py",
+    "source_sha256": "a3018b4bd524c9d04cfab7530d604d1c67cde845831e1ebff44a42c8c6664e8b",
+    "release_sha256": "06cf2a6617b609e07e7501326d0208588d00f084c1a23eac422bd12827dbbb65",
+    "changes": [
+      "Personal/cluster paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ]
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/dataset/dataset_VQ.py",
+    "destination": "research/human_vq/dataset/dataset_VQ.py",
+    "source_sha256": "143eb661c7bda60622d3cfd7c7c3954b4e625e73a502b0a9966154fa57293b6c",
+    "release_sha256": "3f0a7093d05f3123ab2addc14026efab4da7ae66d27e37ad2822aee222c82e02",
+    "changes": [
+      "Personal/cluster paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ]
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/dataset/dataset_tokenize.py",
+    "destination": "research/human_vq/dataset/dataset_tokenize.py",
+    "source_sha256": "888bf04dece431c2dea763c2feb5fb68b5a09bbd076bdb55d5e715bfe085c26e",
+    "release_sha256": "6b6d6e57aa630d5c93b820a4356cabf1683ab751604135c4a550b48531c7ee92",
+    "changes": [
+      "Personal/cluster paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ]
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/dataset/dataset_TM_eval.py",
+    "destination": "research/human_vq/dataset/dataset_TM_eval.py",
+    "source_sha256": "b3cbdb50e23ec0fe5df51cfd063f81dad343a49d71131644484db7d6361a86be",
+    "release_sha256": "28ae45cd826714a72dab351dd581aeaf45ff24510ffd5376952654688954d5ec",
+    "changes": [
+      "Personal/cluster paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ]
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/models/t2m_trans.py",
+    "destination": "research/human_vq/models/t2m_trans.py",
+    "source_sha256": "73352c3269392c81e4dc1b74896310942d4f640e64677d0b001a836b004f3614",
+    "release_sha256": "73352c3269392c81e4dc1b74896310942d4f640e64677d0b001a836b004f3614",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/models/evaluator_wrapper.py",
+    "destination": "research/human_vq/models/evaluator_wrapper.py",
+    "source_sha256": "baac8a9483e714dcf68a434eeea39947b65084067ddaab053a20d1df69bc2e11",
+    "release_sha256": "baac8a9483e714dcf68a434eeea39947b65084067ddaab053a20d1df69bc2e11",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/models/encdec.py",
+    "destination": "research/human_vq/models/encdec.py",
+    "source_sha256": "f07cd0048f7018d189baa1606b1b5078febf74f5322779fd281b50cf19facd01",
+    "release_sha256": "f07cd0048f7018d189baa1606b1b5078febf74f5322779fd281b50cf19facd01",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/models/pos_encoding.py",
+    "destination": "research/human_vq/models/pos_encoding.py",
+    "source_sha256": "498ed5d3ca230edadd240ea1c0c91d3acf3dd38b305df030d558487faf03a936",
+    "release_sha256": "498ed5d3ca230edadd240ea1c0c91d3acf3dd38b305df030d558487faf03a936",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/models/quantize_cnn.py",
+    "destination": "research/human_vq/models/quantize_cnn.py",
+    "source_sha256": "3a0db6eba44822dd86bd28b89492ec3f8cda5a3488f5838140a2a9e9f628b595",
+    "release_sha256": "3a0db6eba44822dd86bd28b89492ec3f8cda5a3488f5838140a2a9e9f628b595",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/models/vqvae.py",
+    "destination": "research/human_vq/models/vqvae.py",
+    "source_sha256": "2030ee3a80f8aca35d780228bd98598634f58a3e6bf492640573240b091fd82f",
+    "release_sha256": "2030ee3a80f8aca35d780228bd98598634f58a3e6bf492640573240b091fd82f",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/models/modules.py",
+    "destination": "research/human_vq/models/modules.py",
+    "source_sha256": "485ef91f38a6fa7b510e7763814ae49e0be35fef693d4978d06fce2216e5bff6",
+    "release_sha256": "485ef91f38a6fa7b510e7763814ae49e0be35fef693d4978d06fce2216e5bff6",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/models/resnet.py",
+    "destination": "research/human_vq/models/resnet.py",
+    "source_sha256": "f5e79053ca6b5bf4c896dbb7ce97c472f8e996d0104463fb5af5cca05cea2cd5",
+    "release_sha256": "f5e79053ca6b5bf4c896dbb7ce97c472f8e996d0104463fb5af5cca05cea2cd5",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/options/option_transformer.py",
+    "destination": "research/human_vq/options/option_transformer.py",
+    "source_sha256": "d0ceb806403c6ed6853b6430d2f9b867ae0320af6a46e183af380d045d4cb210",
+    "release_sha256": "d0ceb806403c6ed6853b6430d2f9b867ae0320af6a46e183af380d045d4cb210",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/options/option_vq.py",
+    "destination": "research/human_vq/options/option_vq.py",
+    "source_sha256": "0200cbfdb9ab80929d462a85bf421cb89aeb41303511406d4646365fd4407226",
+    "release_sha256": "0200cbfdb9ab80929d462a85bf421cb89aeb41303511406d4646365fd4407226",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/options/get_eval_option.py",
+    "destination": "research/human_vq/options/get_eval_option.py",
+    "source_sha256": "bc3596dc7c2cbbc2d6501374aac1578557a36d02e8bd4ab7e48151342d2f2c07",
+    "release_sha256": "bc3596dc7c2cbbc2d6501374aac1578557a36d02e8bd4ab7e48151342d2f2c07",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/utils/losses.py",
+    "destination": "research/human_vq/utils/losses.py",
+    "source_sha256": "b48ae1f4204302d0c260910303512089e739e2ce5276f754572496b252045914",
+    "release_sha256": "b48ae1f4204302d0c260910303512089e739e2ce5276f754572496b252045914",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/utils/word_vectorizer.py",
+    "destination": "research/human_vq/utils/word_vectorizer.py",
+    "source_sha256": "fbfb56d795f2b1ddb99bbf60a097a600a3dfd2275cc541b1dce0a57df787bbdf",
+    "release_sha256": "fbfb56d795f2b1ddb99bbf60a097a600a3dfd2275cc541b1dce0a57df787bbdf",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/utils/rotation_conversions.py",
+    "destination": "research/human_vq/utils/rotation_conversions.py",
+    "source_sha256": "fc1f11ab125e37b8e268d4e2febf0e0699cdaa324b4a05123dac764ade988699",
+    "release_sha256": "fc1f11ab125e37b8e268d4e2febf0e0699cdaa324b4a05123dac764ade988699",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/utils/paramUtil.py",
+    "destination": "research/human_vq/utils/paramUtil.py",
+    "source_sha256": "fe0265f3dcd0d466690d816eae973fcece145f64551cef7e46fed7ef3de80d34",
+    "release_sha256": "fe0265f3dcd0d466690d816eae973fcece145f64551cef7e46fed7ef3de80d34",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/utils/config.py",
+    "destination": "research/human_vq/utils/config.py",
+    "source_sha256": "5bfa8a5d1cfef8a2cc52ef2e205e8824d5d5542280128913142a51df84444f86",
+    "release_sha256": "5bfa8a5d1cfef8a2cc52ef2e205e8824d5d5542280128913142a51df84444f86",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/utils/quaternion.py",
+    "destination": "research/human_vq/utils/quaternion.py",
+    "source_sha256": "7ec13fc8497de6249f4203ed4cd53aaa8f6c6992bc166b066d5561eaa0639802",
+    "release_sha256": "7ec13fc8497de6249f4203ed4cd53aaa8f6c6992bc166b066d5561eaa0639802",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/utils/eval_trans.py",
+    "destination": "research/human_vq/utils/eval_trans.py",
+    "source_sha256": "2026079d08e593bf62a51f99d03cb55d12eec6f7a61ea3e84af25d0b29a25304",
+    "release_sha256": "2026079d08e593bf62a51f99d03cb55d12eec6f7a61ea3e84af25d0b29a25304",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/utils/utils_model.py",
+    "destination": "research/human_vq/utils/utils_model.py",
+    "source_sha256": "ae450f8d3b28ecc0048c6be9725f0e0bc1f3211c2b9458140da95420a617dec5",
+    "release_sha256": "ae450f8d3b28ecc0048c6be9725f0e0bc1f3211c2b9458140da95420a617dec5",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/utils/skeleton.py",
+    "destination": "research/human_vq/utils/skeleton.py",
+    "source_sha256": "396f369089bd6da64c92c8b8ee1653caaad24fdd1f08d8c512e0b92eca8d29ab",
+    "release_sha256": "396f369089bd6da64c92c8b8ee1653caaad24fdd1f08d8c512e0b92eca8d29ab",
+    "changes": []
+  },
+  {
+    "source": "LAM/MotionGlot/oct4/T2M-GPT/utils/motion_process.py",
+    "destination": "research/human_vq/utils/motion_process.py",
+    "source_sha256": "8adc7d6ddd850ad8ebe1ef8868077f79e04277099ce58efed37aa7f4ce119332",
+    "release_sha256": "8adc7d6ddd850ad8ebe1ef8868077f79e04277099ce58efed37aa7f4ce119332",
+    "changes": []
+  }
+]
