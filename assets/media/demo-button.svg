@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="52" viewBox="0 0 300 52" role="img" aria-labelledby="title">
+  <title id="title">Try the live human-motion demo</title>
+  <rect width="300" height="52" rx="10" fill="#172c30"/>
+  <path d="M24 17v18l15-9z" fill="#caef76"/>
+  <text x="158" y="32" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#caef76">Try the Live Demo</text>
+  <path d="M269 20h9v9m0-9-12 12" fill="none" stroke="#caef76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

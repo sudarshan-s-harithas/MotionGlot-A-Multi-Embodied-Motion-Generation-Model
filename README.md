@@ -2,6 +2,12 @@
 
 **Sudarshan Harithas and Srinath Sridhar**
 
+<p align="center">
+  <a href="https://sudarshan-s-harithas.github.io/motionglot-demo/"><img src="assets/media/demo-button.svg" alt="Try the live human-motion demo" width="300" height="52"></a><br>
+  Generate human motion from text or questions, or caption a human motion.<br>
+  <strong>Runs in your browser · No installation or login required</strong>
+</p>
+
 [Paper](https://arxiv.org/abs/2410.16623) · [Project](https://ivl.cs.brown.edu/research/motionglot.html) · [Video](https://www.youtube.com/watch?v=55h64Wv-F9I) · **[Online demo](https://sudarshan-s-harithas.github.io/motionglot-demo/)** · **[Local demo](#interactive-demo--run-locally)** · **[Checkpoints](https://huggingface.co/sudarshanharithas/MotionGlot)**
 
 MotionGlot models human motion, quadruped trajectories and language in one GPT-2 vocabulary. Separate VQ-VAEs turn 263-dimensional human features and 3-dimensional robot trajectories into discrete codes; the shared GPT learns instruction sequences for six tasks.
