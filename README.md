@@ -2,9 +2,13 @@
 
 **Sudarshan Harithas and Srinath Sridhar**
 
-[Paper](https://arxiv.org/abs/2410.16623) · [Project](https://ivl.cs.brown.edu/research/motionglot.html)
+[Paper](https://arxiv.org/abs/2410.16623) · [Project](https://ivl.cs.brown.edu/research/motionglot.html) · [Video](https://www.youtube.com/watch?v=55h64Wv-F9I)
 
 MotionGlot models human motion, quadruped trajectories and language in one GPT-2 vocabulary. Separate VQ-VAEs turn 263-dimensional human features and 3-dimensional robot trajectories into discrete codes; the shared GPT learns instruction sequences for six tasks.
+
+<p align="center">
+  <a href="assets/media/abstract.svg"><img src="assets/media/abstract.svg" alt="MotionGlot overview showing motion generation and captioning across human and quadruped embodiments" width="1000"></a>
+</p>
 
 This source release recovers the local research implementation and provides portable training and inference commands. The saved vocabulary is included. Model weights, HumanML3D/AMASS data and robot data are supplied separately; there are no public checkpoint download links configured. Original research scripts and their provenance are in [`research/`](research/) and [`docs/source_manifest.json`](docs/source_manifest.json). See [`docs/reproduction.md`](docs/reproduction.md) for differences from the research runs and validation limits.
 
@@ -16,6 +20,50 @@ This source release recovers the local research implementation and provides port
 | Robot motion captioning | `robot-to-text` | Robot motion → caption |
 | Goal reaching | `goal-to-robot` | Ground-plane goal → robot trajectory |
 | Question-conditioned motion | `question-to-human` | Situational question → human motion |
+
+## Method overview
+
+<p align="center">
+  <a href="assets/media/overview.svg"><img src="assets/media/overview.svg" alt="Separate human and robot VQ-VAE tokenizers feed a shared motion and text vocabulary for GPT instruction training" width="1000"></a>
+</p>
+
+Each embodiment has its own motion codebook. Human, robot, goal, gait and language tokens are combined into one vocabulary for instruction training.
+
+## Qualitative results
+
+Published demonstrations from the [MotionGlot project page](https://ivl.cs.brown.edu/research/motionglot.html). Click a GIF or figure to view it at full size; the [video](https://www.youtube.com/watch?v=55h64Wv-F9I) shows the complete presentation.
+
+### Text to robot motion
+
+| Walk backward, turn right, then walk forward | Walk forward, turn right, then walk backward | Walk in a clockwise circle |
+| :---: | :---: | :---: |
+| <a href="assets/media/rt2m/BRF.gif"><img src="assets/media/rt2m/BRF.gif" alt="Quadruped robot walks backward, turns right and walks forward" width="300"></a> | <a href="assets/media/rt2m/FLB.gif"><img src="assets/media/rt2m/FLB.gif" alt="Quadruped robot walks forward, turns right and walks backward" width="300"></a> | <a href="assets/media/rt2m/CC.gif"><img src="assets/media/rt2m/CC.gif" alt="Quadruped robot follows a clockwise circular path" width="300"></a> |
+
+### Text to human motion
+
+| Run on a treadmill | Walk forward and sit | Perform repeated cartwheels |
+| :---: | :---: | :---: |
+| <a href="assets/media/ht2m/treadmil.gif"><img src="assets/media/ht2m/treadmil.gif" alt="Generated human motion running on a treadmill" width="300"></a> | <a href="assets/media/ht2m/wfs.gif"><img src="assets/media/ht2m/wfs.gif" alt="Generated human motion walking forward and sitting" width="300"></a> | <a href="assets/media/ht2m/multiple_cartwheel2.gif"><img src="assets/media/ht2m/multiple_cartwheel2.gif" alt="Generated human motion performing repeated cartwheels" width="300"></a> |
+
+### Questions answered with human motion
+
+| How can someone increase leg strength? | How does someone practice gymnastics? | Show a move from a golf game |
+| :---: | :---: | :---: |
+| <a href="assets/media/ht2m/leg_strength.gif"><img src="assets/media/ht2m/leg_strength.gif" alt="Human motion generated in response to a question about leg strength" width="300"></a> | <a href="assets/media/ht2m/gymnastics_class.gif"><img src="assets/media/ht2m/gymnastics_class.gif" alt="Human motion generated in response to a question about practicing gymnastics" width="300"></a> | <a href="assets/media/ht2m/golf_game.gif"><img src="assets/media/ht2m/golf_game.gif" alt="Human motion generated in response to a question about golf" width="300"></a> |
+
+### Robot goal reaching
+
+Different generated trajectories approach the highlighted goal region.
+
+| Goal example 1 | Goal example 2 | Goal example 3 |
+| :---: | :---: | :---: |
+| <a href="assets/media/goal_reaching/goal1_1.png"><img src="assets/media/goal_reaching/goal1_1.png" alt="Multiple robot trajectories approaching the first goal region" width="300"></a> | <a href="assets/media/goal_reaching/goal2_1.png"><img src="assets/media/goal_reaching/goal2_1.png" alt="Multiple robot trajectories approaching the second goal region" width="300"></a> | <a href="assets/media/goal_reaching/goal3_1.png"><img src="assets/media/goal_reaching/goal3_1.png" alt="Multiple robot trajectories approaching the third goal region" width="300"></a> |
+
+### Human motion captioning
+
+| Marching forward with arms swinging | Dancing a waltz | Performing warm-up stretches |
+| :---: | :---: | :---: |
+| <a href="assets/media/hmc/march.gif"><img src="assets/media/hmc/march.gif" alt="Human marching motion paired with its generated caption" width="300"></a> | <a href="assets/media/hmc/waltz.gif"><img src="assets/media/hmc/waltz.gif" alt="Human waltz motion paired with its generated caption" width="300"></a> | <a href="assets/media/hmc/warmup.gif"><img src="assets/media/hmc/warmup.gif" alt="Human warm-up stretching motion paired with its generated caption" width="300"></a> |
 
 ## Install
 

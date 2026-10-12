@@ -1,0 +1,107 @@
+{
+  "source_page": "https://ivl.cs.brown.edu/research/motionglot.html",
+  "assets": [
+    {
+      "path": "abstract.svg",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/abstract.svg",
+      "bytes": 4734809,
+      "sha256": "89e1e9028226c2166d45889dce93efb48a193a971dfe57a994a71811f82b4344"
+    },
+    {
+      "path": "overview.svg",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/overview.svg",
+      "bytes": 3649374,
+      "sha256": "4011e33a4c15e00f6ba0c770037ef85db1f2297b1e6cbe5801f2f08ad5f21dcf"
+    },
+    {
+      "path": "rt2m/BRF.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/rt2m/BRF.gif",
+      "bytes": 7615739,
+      "sha256": "0e09f1cf8a3995965e3bfeecce4ad510166ae4521490f432f2d7b10bfb271fe7"
+    },
+    {
+      "path": "rt2m/FLB.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/rt2m/FLB.gif",
+      "bytes": 7415090,
+      "sha256": "169e28a07bf85f29677cad226b7e10f95a9d87e45eb370d08885d0a83cc8d671"
+    },
+    {
+      "path": "rt2m/CC.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/rt2m/CC.gif",
+      "bytes": 7736050,
+      "sha256": "1fa7e70c832eab3280b00763bd07bfd370b8d516670f124b8a85ace663060e10"
+    },
+    {
+      "path": "ht2m/treadmil.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/ht2m/treadmil.gif",
+      "bytes": 12485881,
+      "sha256": "e8f444d0bc5e775ecdf2dd007af450441348a25343de07c9ee2ae3ee2decaddf"
+    },
+    {
+      "path": "ht2m/wfs.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/ht2m/wfs.gif",
+      "bytes": 3686052,
+      "sha256": "25a3e061aaabedfdeecc71138b4f48d637a95038bfb7960d783b119e862e5940"
+    },
+    {
+      "path": "ht2m/multiple_cartwheel2.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/ht2m/multiple_cartwheel2.gif",
+      "bytes": 5082322,
+      "sha256": "80c2766fddb91d44480af20f8501dba65b80de3d9276296f826c46d263433170"
+    },
+    {
+      "path": "ht2m/leg_strength.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/ht2m/leg_strength.gif",
+      "bytes": 3356148,
+      "sha256": "2d94f2475fc9196aeed5e441f620fe2076ffc9d8440a8fcacf029170b05d52a4"
+    },
+    {
+      "path": "ht2m/gymnastics_class.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/ht2m/gymnastics_class.gif",
+      "bytes": 5860402,
+      "sha256": "7f94af615b127cc4e5736fa1d44b0277a25fa1acad7c88870b54732cf06045f7"
+    },
+    {
+      "path": "ht2m/golf_game.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/ht2m/golf_game.gif",
+      "bytes": 4861749,
+      "sha256": "bbd1c9aaf9078987d1fb9424aeb2646d8319a8b7fbbc97a25955402aa56251b0"
+    },
+    {
+      "path": "goal_reaching/goal1_1.png",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/goal_reaching/goal1_1.png",
+      "bytes": 12378,
+      "sha256": "1b5601a381be3854a370fff75991cadea3283cc1da734c7b8ef7b79b02ad6648"
+    },
+    {
+      "path": "goal_reaching/goal2_1.png",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/goal_reaching/goal2_1.png",
+      "bytes": 14567,
+      "sha256": "538a97ae7fa004f851886ebbe66b7d3459eaa58d9eaf6bd1060e9a520b67158b"
+    },
+    {
+      "path": "goal_reaching/goal3_1.png",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/goal_reaching/goal3_1.png",
+      "bytes": 23728,
+      "sha256": "58dd752f2639838e6fef75bc3b09097e9992c05a76aac7d8d045e893fe1cdea3"
+    },
+    {
+      "path": "hmc/march.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/hmc/march.gif",
+      "bytes": 2303077,
+      "sha256": "61c785faf8a027b158af73a0a4479d6f4741ac974b70ec47363948e7dda2a551"
+    },
+    {
+      "path": "hmc/waltz.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/hmc/waltz.gif",
+      "bytes": 13833723,
+      "sha256": "e40d58fc4c822b2858b27ef69ffdd03dd739149ad1ccec3ae349c0da7fc7639a"
+    },
+    {
+      "path": "hmc/warmup.gif",
+      "source_url": "https://ivl.cs.brown.edu/assets/images/projects/motionglot/hmc/warmup.gif",
+      "bytes": 12717420,
+      "sha256": "bc0307b3eaffdce7c9a917021ae9f64f8661a383c83202a011cd492ff97c1472"
+    }
+  ]
+}
