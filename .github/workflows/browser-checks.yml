@@ -1,0 +1,30 @@
+name: Browser demo checks
+on:
+  push:
+    paths: ['web/**', 'scripts/*browser*', '.github/workflows/browser-checks.yml']
+  pull_request:
+    paths: ['web/**', 'scripts/*browser*', '.github/workflows/browser-checks.yml']
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test web/tests.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install playwright==1.63.0
+      - name: Serve and exercise the demo
+        run: |
+          python -m http.server 8000 --directory web > /tmp/motionglot-http.log 2>&1 &
+          python scripts/test_browser_demo.py --url http://localhost:8000/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-demo-checks
+          path: local/browser-qa/

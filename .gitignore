@@ -21,3 +21,4 @@ wandb/
 *.npz
 *.zip
 *.tar.gz
+*.onnx

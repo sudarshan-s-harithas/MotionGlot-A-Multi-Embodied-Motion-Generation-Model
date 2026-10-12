@@ -2,9 +2,15 @@
 
 **Sudarshan Harithas and Srinath Sridhar**
 
-[Paper](https://arxiv.org/abs/2410.16623) · [Project](https://ivl.cs.brown.edu/research/motionglot.html) · [Video](https://www.youtube.com/watch?v=55h64Wv-F9I) · **[Local demo](#interactive-demo--run-locally)** · **[Checkpoints](https://huggingface.co/sudarshanharithas/MotionGlot)**
+[Paper](https://arxiv.org/abs/2410.16623) · [Project](https://ivl.cs.brown.edu/research/motionglot.html) · [Video](https://www.youtube.com/watch?v=55h64Wv-F9I) · **[Online demo](https://sudarshan-s-harithas.github.io/motionglot-demo/)** · **[Local demo](#interactive-demo--run-locally)** · **[Checkpoints](https://huggingface.co/sudarshanharithas/MotionGlot)**
 
 MotionGlot models human motion, quadruped trajectories and language in one GPT-2 vocabulary. Separate VQ-VAEs turn 263-dimensional human features and 3-dimensional robot trajectories into discrete codes; the shared GPT learns instruction sequences for six tasks.
+
+## Interactive demo · online
+
+**[Try MotionGlot online →](https://sudarshan-s-harithas.github.io/motionglot-demo/)**
+
+Generate motion and captions across **all six tasks**, directly in your browser. The free GitHub Pages demo uses **mjswan** for 3D playback with **physics disabled**. Explore checkpoint examples immediately, or enter your own prompt. Live generation downloads approximately **293 MB** on first use; a desktop browser with several GB of available memory is recommended. Robot playback shows the generated body trajectory with fixed illustrative legs. No installation or login is required. [Browser demo details and hosting instructions](docs/browser-demo.md).
 
 ## Interactive demo · run locally
 

@@ -13,3 +13,5 @@ No AMASS motion files, SMPL/SMPL-H body models, robot hardware SDK, learned eval
 The recovered inference checkpoints are now published separately at [sudarshanharithas/MotionGlot](https://huggingface.co/sudarshanharithas/MotionGlot), with tokenizer and VQ attribution and license notices. The local demo downloads that bundle; source archives continue to exclude model binaries and training data.
 
 `research/` records the recovered experiments. It includes evaluator code whose required artifacts and dependencies must be obtained separately. Consult `docs/reproduction.md` before using it to claim paper metrics.
+
+The browser demo imports [mjswan 0.11.6](https://github.com/ttktjmt/mjswan), an Apache-2.0 project, from jsDelivr. Its license is retained in `licenses/mjswan-Apache-2.0.txt`; the demo footer displays attribution. `web/viewer.js` is a MotionGlot kinematic adapter for the pinned runtime. ONNX Runtime Web (MIT) and fflate (MIT) are pinned CDN dependencies, not vendored source. MuJoCo and Three.js are bundled upstream components of mjswan.
