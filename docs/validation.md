@@ -42,3 +42,13 @@ The recovered GPT has 51,694 input embeddings and a 1,024-token context. The tok
 | Robot → text | Caption string | `<eog_rmtt>` |
 
 These are functionality checks on individual prompts. Motion semantic accuracy and goal success were not measured. Full-model retraining, distributed training, hardware execution and benchmark reproduction remain untested. Original checkpoints/data are linked only in the ignored `local/` directory, and are absent from the source release archive.
+
+## Local demo and checkpoint release
+
+The installable demo was additionally validated with Python 3.11.5, PyTorch 2.4.1+cpu, NumPy 1.26.4, Gradio 6.0.2, and the pinned research Transformers version. The complete suite passed **27 tests**, including checkpoint integrity, human feature recovery, upload validation, MP4 decoding and robot goal visualization.
+
+All six tasks were exercised with the recovered checkpoint through the demo engine. Text-to-human produced 48 frames and question-to-human produced 184 frames; both returned playable videos. Robot generation and goal reaching each produced 192-frame trajectories, and both captioning tasks returned text. All examples emitted their corresponding task end token. Sampling explains the question-output length difference from the earlier greedy smoke check.
+
+HTTP requests through the running Gradio interface verified human video generation and downloads, captioning of a generated feature file, and robot plot generation. A fresh anonymous download of the public checkpoint bundle passed all file hashes. The released GPT weights have SHA-256 `5ca7c583339ebb073b1223248c15d912ac00733bf3be95a9dbb46c05d96f37a6`, exactly matching the original GUI checkpoint. The GUI's tokenizer fingerprint and normalization arrays also match the released artifacts.
+
+The checkpoint bundle is published separately on Hugging Face and packaged for GitHub Releases. Source archives exclude its model binaries, training data and optimizer state.

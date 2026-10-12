@@ -2,15 +2,35 @@
 
 **Sudarshan Harithas and Srinath Sridhar**
 
-[Paper](https://arxiv.org/abs/2410.16623) · [Project](https://ivl.cs.brown.edu/research/motionglot.html) · [Video](https://www.youtube.com/watch?v=55h64Wv-F9I)
+[Paper](https://arxiv.org/abs/2410.16623) · [Project](https://ivl.cs.brown.edu/research/motionglot.html) · [Video](https://www.youtube.com/watch?v=55h64Wv-F9I) · **[Local demo](#interactive-demo--run-locally)** · **[Checkpoints](https://huggingface.co/sudarshanharithas/MotionGlot)**
 
 MotionGlot models human motion, quadruped trajectories and language in one GPT-2 vocabulary. Separate VQ-VAEs turn 263-dimensional human features and 3-dimensional robot trajectories into discrete codes; the shared GPT learns instruction sequences for six tasks.
+
+## Interactive demo · run locally
+
+**Try the released checkpoint in your browser:** generate human-motion videos, explore robot trajectories and goal reaching, or upload a motion to get a caption. The demo supports all six tasks and runs on CPU or CUDA.
+
+For the commands below, use **Python 3.10–3.12**:
+
+```bash
+git clone https://github.com/sudarshan-s-harithas/MotionGlot-A-Multi-Embodied-Motion-Generation-Model.git
+cd MotionGlot-A-Multi-Embodied-Motion-Generation-Model
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -e '.[demo]'
+motionglot-demo
+```
+
+Open **[http://127.0.0.1:7860](http://127.0.0.1:7860)**. The first launch downloads and verifies the approximately **660 MB** [checkpoint bundle](https://huggingface.co/sudarshanharithas/MotionGlot); later launches reuse it. Try “A person walks forward” or “How does a person practice in a gymnastics class?” and download the resulting motion features.
+
+For a GPU, install a suitable CUDA PyTorch build and run `motionglot-demo --device cuda`. `python app.py` is an equivalent entry point. See **[demo instructions](docs/demo.md)** for custom checkpoint paths, Windows setup and temporary sharing.
 
 <p align="center">
   <a href="assets/media/abstract.svg"><img src="assets/media/abstract.svg" alt="MotionGlot overview showing motion generation and captioning across human and quadruped embodiments" width="1000"></a>
 </p>
 
-This source release recovers the local research implementation and provides portable training and inference commands. The saved vocabulary is included. Model weights, HumanML3D/AMASS data and robot data are supplied separately; there are no public checkpoint download links configured. Original research scripts and their provenance are in [`research/`](research/) and [`docs/source_manifest.json`](docs/source_manifest.json). See [`docs/reproduction.md`](docs/reproduction.md) for differences from the research runs and validation limits.
+This source release recovers the local research implementation and provides portable training and inference commands. The saved vocabulary is included, and the GPT checkpoint, both motion VQ-VAEs and matching normalization are [available separately](https://huggingface.co/sudarshanharithas/MotionGlot). HumanML3D/AMASS data and robot training data are obtained separately. Original research scripts and their provenance are in [`research/`](research/) and [`docs/source_manifest.json`](docs/source_manifest.json). See [`docs/reproduction.md`](docs/reproduction.md) for differences from the research runs and validation limits.
 
 | Task | CLI name | Input → output |
 | --- | --- | --- |

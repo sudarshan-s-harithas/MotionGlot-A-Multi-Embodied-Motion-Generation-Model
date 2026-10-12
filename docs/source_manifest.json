@@ -624,5 +624,23 @@
     "source_sha256": "8adc7d6ddd850ad8ebe1ef8868077f79e04277099ce58efed37aa7f4ce119332",
     "release_sha256": "8adc7d6ddd850ad8ebe1ef8868077f79e04277099ce58efed37aa7f4ce119332",
     "changes": []
+  },
+  {
+    "source": "LAM/visulization/GUI/generate_human_motion.py",
+    "destination": "research/demo/generate_human_motion.py",
+    "source_sha256": "0cf5949c2d0f1c1a4648256932442483b6d3e816eedd39d31c47b4cb6dd7b853",
+    "release_sha256": "44f649bf396c119f330641ba1e3801d90120aaae26c6a176e7d8a10e4975d482",
+    "changes": [
+      "Personal/cluster paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ]
+  },
+  {
+    "source": "LAM/visulization/GUI/gradio_ui.py",
+    "destination": "research/demo/gradio_ui.py",
+    "source_sha256": "8745049db4124598e8823f1d897b67fb44ac151d257f5066662a5dc579115692",
+    "release_sha256": "29dd0358069517ca82e3171fe36f38487afdc1d3cf67180eeaf25b0861ceaf59",
+    "changes": [
+      "Personal/cluster paths replaced with REPLACE_WITH_LOCAL_PATH"
+    ]
   }
 ]

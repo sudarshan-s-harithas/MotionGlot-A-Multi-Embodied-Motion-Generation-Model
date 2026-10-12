@@ -9,6 +9,28 @@ from .vq import load_normalization, load_vq
 from .vocabulary import fingerprint, validate_vocabulary
 
 
+class InferenceRuntime:
+    """Reuse model instances across serialized demo requests."""
+    def __init__(self, model_path, tokenizer_path=None, device="cpu"):
+        from transformers import AutoTokenizer, AutoModelForCausalLM
+        self.device = device
+        self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_path or model_path, local_files_only=True)
+        self.vocabulary = validate_vocabulary(self.tokenizer)
+        self.model = AutoModelForCausalLM.from_pretrained(model_path, local_files_only=True).to(device).eval()
+        if self.model.get_input_embeddings().num_embeddings != len(self.tokenizer):
+            raise ValueError("GPT and tokenizer vocabulary sizes differ")
+        expected = getattr(self.model.config, "motionglot_vocab_fingerprint", None)
+        if expected is not None and expected != fingerprint(self.tokenizer):
+            raise ValueError("GPT and tokenizer use different token ID mappings")
+        self.vq_models = {}
+
+    def vq(self, path, embodiment):
+        key = (str(path), embodiment)
+        if key not in self.vq_models:
+            self.vq_models[key] = load_vq(path, embodiment, self.device)
+        return self.vq_models[key]
+
+
 def decode_motion_ids(ids, tokenizer, embodiment, nb_code):
     mapping = {tokenizer.convert_tokens_to_ids("<{}_motion_id_{}>".format(embodiment, i)): i
                for i in range(nb_code)}
@@ -19,17 +41,13 @@ def decode_motion_ids(ids, tokenizer, embodiment, nb_code):
 
 
 @torch.no_grad()
-def generate(args):
-    from transformers import AutoTokenizer, AutoModelForCausalLM, LogitsProcessor, LogitsProcessorList
+def generate(args, runtime=None):
+    from transformers import LogitsProcessor, LogitsProcessorList
     torch.manual_seed(args.seed)
-    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer or args.model, local_files_only=True)
-    vocabulary = validate_vocabulary(tokenizer)
-    model = AutoModelForCausalLM.from_pretrained(args.model, local_files_only=True).to(args.device).eval()
-    if model.get_input_embeddings().num_embeddings != len(tokenizer):
-        raise ValueError("GPT and tokenizer vocabulary sizes differ")
-    expected = getattr(model.config, "motionglot_vocab_fingerprint", None)
-    if expected is not None and expected != fingerprint(tokenizer):
-        raise ValueError("GPT and tokenizer use different token ID mappings")
+    runtime = runtime or InferenceRuntime(args.model, args.tokenizer, args.device)
+    if runtime.device != args.device:
+        raise ValueError("Runtime and request devices differ")
+    tokenizer, model, vocabulary = runtime.tokenizer, runtime.model, runtime.vocabulary
     spec = TASKS[args.task]
     decoder = config = norm = None
     if args.task in ("human-to-text", "robot-to-text"):
@@ -37,7 +55,7 @@ def generate(args):
         path = args.human_vq if embodiment == "human" else args.robot_vq
         if not args.motion or not path:
             raise ValueError("Captioning needs --motion and the corresponding VQ checkpoint")
-        encoder, enc_config = load_vq(path, embodiment, args.device)
+        encoder, enc_config = runtime.vq(path, embodiment)
         norm = load_normalization(args.normalization) if embodiment == "human" else None
         row = {"motion": args.motion, "embodiment": embodiment, "swap_xy": args.swap_xy}
         motion = load_motion(row, normalization=norm, unit_length=enc_config.unit_length).unsqueeze(0).to(args.device)
@@ -52,7 +70,7 @@ def generate(args):
         checkpoint = args.human_vq if spec.output == "human" else args.robot_vq
         if not checkpoint:
             raise ValueError("Motion generation needs the corresponding VQ checkpoint")
-        decoder, config = load_vq(checkpoint, spec.output, args.device)
+        decoder, config = runtime.vq(checkpoint, spec.output)
         expected_codes = vocabulary[spec.output + "_codes"]
         if config.nb_code != expected_codes:
             raise ValueError("VQ codebook and GPT vocabulary differ")

@@ -10,4 +10,6 @@ The companion local [text-to-motion](https://github.com/EricGuo5513/text-to-moti
 
 No AMASS motion files, SMPL/SMPL-H body models, robot hardware SDK, learned evaluator artifacts, QUAD-LOCO motion data or trained model weights are part of this source archive. QUES-CAP text and local asset links remain in the ignored `local/` folder for validation. Release those assets separately under their applicable terms if desired.
 
+The recovered inference checkpoints are now published separately at [sudarshanharithas/MotionGlot](https://huggingface.co/sudarshanharithas/MotionGlot), with tokenizer and VQ attribution and license notices. The local demo downloads that bundle; source archives continue to exclude model binaries and training data.
+
 `research/` records the recovered experiments. It includes evaluator code whose required artifacts and dependencies must be obtained separately. Consult `docs/reproduction.md` before using it to claim paper metrics.
