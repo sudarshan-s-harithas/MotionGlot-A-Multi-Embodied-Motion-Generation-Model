@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Try MotionGlot in your browser. Generate human motion and robot trajectories, or describe a motion. No installation, no physics simulation."
+      content="Try MotionGlot in your browser. Generate human motion from text or questions, or describe a human motion. No installation, no physics simulation."
     />
     <title>MotionGlot · Interactive demo</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css?v=human1" />
   </head>
   <body>
     <header>
@@ -28,11 +28,11 @@
     </header>
     <main>
       <div class="intro">
-        <div class="eyebrow">ONE MODEL · TWO EMBODIMENTS · SIX TASKS</div>
+        <div class="eyebrow">ONE MODEL · HUMAN MOTION · THREE TASKS</div>
         <h1>Put language<br />in motion<span>.</span></h1>
         <p>
-          Generate a human action or a robot trajectory.<br />Or give MotionGlot
-          a motion and ask what it means.
+          Generate a human action from language.<br />Or give MotionGlot a
+          motion and ask what it means.
         </p>
         <div class="badges">
           <span><i></i> Runs in your browser</span><span>Physics disabled</span
@@ -45,10 +45,7 @@
           ><select id="task">
             <option value="text-to-human">Text → human motion</option>
             <option value="question-to-human">Question → human motion</option>
-            <option value="text-to-robot">Text → robot trajectory</option>
-            <option value="goal-to-robot">Goal → robot trajectory</option>
             <option value="human-to-text">Human motion → text</option>
-            <option value="robot-to-text">Robot trajectory → text</option>
           </select>
           <div id="text-input">
             <label for="prompt">02 <span>Describe your motion</span></label
@@ -57,39 +54,12 @@ A person walks forward</textarea
             >
             <div id="suggestions" class="suggestions"></div>
           </div>
-          <div id="goal-input" hidden>
-            <label>02 <span>Set a goal, in metres</span></label>
-            <div class="goal-fields">
-              <label for="goal-x"
-                >X
-                <input
-                  id="goal-x"
-                  type="number"
-                  min="-7"
-                  max="6.99"
-                  step="0.5"
-                  value="2" /></label
-              ><label for="goal-y"
-                >Y
-                <input
-                  id="goal-y"
-                  type="number"
-                  min="-7"
-                  max="6.99"
-                  step="0.5"
-                  value="1"
-              /></label>
-            </div>
-            <p class="hint">
-              Goals use the checkpoint’s 0.5 m grid, from −7 to 7 m.
-            </p>
-          </div>
           <div id="motion-input" hidden>
             <label for="motion-file">02 <span>Provide a motion</span></label
             ><input id="motion-file" type="file" accept=".npy,.json" />
             <p class="hint">
-              Upload .npy or JSON features: human [frames, 263], robot [frames,
-              3]. Or use the selected example below.
+              Upload .npy or JSON human features: [frames, 263]. Or use the
+              selected example below.
             </p>
           </div>
           <div class="settings">
@@ -164,22 +134,20 @@ A person walks forward</textarea
       </section>
       <div class="about">
         <div>
-          <h2>Motion across embodiments.</h2>
+          <h2>Language into human motion.</h2>
           <p>
-            MotionGlot shares a vocabulary across language, human motion and
-            quadruped trajectories. This demo runs the released GPT-2 and
-            VQ-VAEs locally in your browser. Prompts and uploaded motions stay
-            on your device.
+            Generate a human motion from a description or a question, then
+            explore it in 3D. Upload a human motion to get a caption. The
+            released model runs locally in your browser. Prompts and uploaded
+            motions stay on your device.
           </p>
         </div>
         <div>
           <h3>What you’re seeing</h3>
           <p>
-            Human playback recovers a 22-joint skeleton. Robot playback shows a
-            quadruped marker following generated x, y and heading increments.
-            Leg poses are illustrative and fixed; there is no physics or
-            locomotion controller. Browser weights and computation are
-            documented in the code.
+            Human playback shows a 22-joint skeleton. Pause, scrub through
+            frames, and orbit the camera to explore the motion. Physics stays
+            disabled throughout playback.
           </p>
         </div>
       </div>
@@ -194,6 +162,6 @@ A person walks forward</textarea
         ></span
       >
     </footer>
-    <script type="module" src="./app.js"></script>
+    <script type="module" src="./app.js?v=human1"></script>
   </body>
 </html>

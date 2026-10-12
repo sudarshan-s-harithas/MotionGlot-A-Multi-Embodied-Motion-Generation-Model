@@ -1,4 +1,4 @@
-"""Exercise all six tasks in Chrome, plus playback and mobile layout.
+"""Exercise all three human tasks in Chrome, plus playback and mobile layout.
 
 pip install playwright; run with --url http://127.0.0.1:7862 and
 --model-base http://127.0.0.1:7862/models/ for the local export server.
@@ -21,10 +21,11 @@ async def check(args):
             await page.route('**/settings.json', lambda route: route.fulfill(json={'modelBase': args.model_base}))
         await page.goto(args.url, wait_until='networkidle', timeout=60000)
         await page.wait_for_function("document.querySelector('#download').disabled === false", timeout=60000)
+        assert await page.locator('#task option').count() == 3
+        assert 'robot' not in (await page.locator('body').inner_text()).lower()
         results = []
         # A current motion stays selected when switching to its captioning task.
-        for task in ['text-to-human', 'question-to-human', 'human-to-text',
-                     'text-to-robot', 'goal-to-robot', 'robot-to-text']:
+        for task in ['text-to-human', 'question-to-human', 'human-to-text']:
             await page.select_option('#task', task)
             await page.click('#generate')
             await page.wait_for_function("document.querySelector('#generate').disabled === false", timeout=180000)

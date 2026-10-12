@@ -2,12 +2,12 @@
 
 **[Open the online demo](https://sudarshan-s-harithas.github.io/motionglot-demo/)**
 
-All six tasks run inside the visitor’s browser. GitHub Pages serves the static
+The three human-motion tasks run inside the visitor’s browser: text-to-human, question-to-human and human-to-text. GitHub Pages serves the static
 interface, and the public Hugging Face model repository serves the ONNX files.
 There is no Python inference server, account requirement or paid Space.
 Prompts and uploaded motions are processed on the visitor’s device.
 
-Four checkpoint examples play immediately. Click **Load model & generate** to
+Human checkpoint examples play immediately. Click **Load model & generate** to
 run a new prompt. The first generation downloads approximately 253 MB of GPT
 weights and a 37–40 MB VQ decoder; captioning loads the appropriate 37–39 MB
 encoder as well. Downloaded models are cached with the browser Cache API when
@@ -25,11 +25,9 @@ including the brief startup loop during scene loading. Playback writes mocap
 positions and orientations, calls `mj_forward`, then refreshes render state.
 The physics clock remains zero. There is no policy or physics integration.
 
-Human features recover a 22-joint HumanML3D skeleton. Robot outputs are the
-checkpoint’s three trajectory increments, accumulated into x, y and heading.
-The quadruped marker has fixed illustrative legs; it does not show predicted
-leg joints or a tested locomotion controller. Goal cells match the original
-0.5 m discretization.
+Human features recover a 22-joint HumanML3D skeleton. The online demo includes
+only human motion; its controls, examples, inference worker and viewer have no
+robot task or playback paths.
 
 The public mjswan engine API does not yet expose arbitrary frame updates. A
 small adapter in `web/viewer.js` accesses the pinned version’s runtime fields,
@@ -66,8 +64,7 @@ float32. This reduces the download without using int8 quantization. Numerical
 rounding can change sampled or near-tied greedy choices. The export validation
 found a maximum logit difference of 0.00589 and mean difference of 0.00091 on
 the recorded test prompt. Human decoder error was below 0.00014 on its test
-input; robot decoder error was below 0.000000057. Both encoder code sequences
-matched their Python reference inputs exactly. These are numerical checks,
+input; human encoder code sequences matched their Python reference inputs exactly. These are numerical checks,
 not a re-evaluation of the paper’s metrics.
 
 Each browser model has a SHA-256 and size in `browser/manifest.json`. Export
@@ -95,14 +92,13 @@ python scripts/test_browser_demo.py --url http://localhost:8000/
 
 The Node tests compare byte BPE with Python tokenization for task markers,
 whitespace and Unicode, compare skeleton recovery with the Python reference,
-and check trajectory integration and input validation. They download only
-the tokenizer/config JSON files. The Chrome test runs all six tasks, checks
+and check input validation. They download only
+the tokenizer/config JSON files. The Chrome test runs all three human tasks, checks
 end markers and captions, verifies the physics clock on localhost, and checks
 mobile overflow. It requires Chrome at `/usr/bin/google-chrome` or `--chrome`.
 The production UI labels examples and newly generated results separately.
 
 Motion downloads are JSON objects with `features`: human arrays have shape
-[frames, 263] in unnormalized HumanML3D representation, and robot arrays have
-shape [frames, 3] with trajectory increments. Captioning accepts these JSON
+[frames, 263] in unnormalized HumanML3D representation. Captioning accepts these JSON
 objects or C-order float32/float64 `.npy` arrays. Frame counts must be divisible
 by four. Use 20 fps for playback.

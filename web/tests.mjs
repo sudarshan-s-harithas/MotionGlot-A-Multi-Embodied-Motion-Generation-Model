@@ -4,7 +4,6 @@ import { readFile } from "node:fs/promises";
 import { MotionTokenizer } from "./tokenizer.js";
 import {
   humanJoints,
-  robotFrames,
   parseNPY,
   validateFeatures,
 } from "./motion.js";
@@ -20,18 +19,6 @@ test("human skeleton agrees with Python HumanML3D recovery", () => {
     for (let j = 0; j < 22; j++)
       for (let k = 0; k < 3; k++)
         assert.ok(Math.abs(actual[i][j][k] - fixtures.joints[i][j][k]) < 2e-5);
-});
-test("robot increments integrate x, y and heading", () => {
-  assert.deepEqual(
-    robotFrames([
-      [1, 2, 0.1],
-      [2, 1, 0.2],
-    ]),
-    [
-      [1, 2, 0.1],
-      [3, 3, 0.1 + 0.2],
-    ],
-  );
 });
 test("caption input rejects invalid shapes and nonfinite values", () => {
   assert.throws(() => validateFeatures([[1, 2, 3]], 3));

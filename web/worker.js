@@ -1,5 +1,5 @@
 import * as ort from "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/ort.wasm.min.mjs";
-import { MotionTokenizer } from "./tokenizer.js";
+import { MotionTokenizer } from "./tokenizer.js?v=human1";
 ort.env.wasm.numThreads = 1;
 ort.env.wasm.wasmPaths =
   "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/";
@@ -135,21 +135,23 @@ function choose(logits, allowed, sample, rng) {
   return sorted[cut - 1][0];
 }
 async function generate(request) {
+  if (
+    !["text-to-human", "question-to-human", "human-to-text"].includes(
+      request.task,
+    )
+  )
+    throw Error("This demo supports human-motion tasks only.");
   await setup();
   const spec = config.tasks[request.task],
     tok = config.tokens;
   let source = request.text,
     features = request.features,
-    embodiment = request.task.startsWith("human") ? "human" : "robot";
+    embodiment = "human";
   if (spec.output === "text") {
-    const dim = embodiment === "human" ? 263 : 3,
+    const dim = 263,
       input = features
         .flat()
-        .map((v, i) =>
-          embodiment === "human"
-            ? (v - config.mean[i % dim]) / config.std[i % dim]
-            : v,
-        );
+        .map((v, i) => (v - config.mean[i % dim]) / config.std[i % dim]);
     const encoder = await session(`${embodiment}-encoder.onnx`);
     const encoded = await encoder.run({
       values: new ort.Tensor("float32", Float32Array.from(input), [
@@ -163,13 +165,6 @@ async function generate(request) {
       (x) => `<${embodiment}_motion_id_${Number(x)}>`,
     ).join("");
     encoded.output.dispose();
-  } else if (request.task === "goal-to-robot") {
-    const [x, y] = request.goal;
-    if (!(x >= -7 && x < 7 && y >= -7 && y < 7))
-      throw Error(
-        "Goal coordinates must be between −7 and 7 metres (7 excluded).",
-      );
-    source = `<goal_id_${Math.floor((x + 7) / 0.5) * 28 + 27 - Math.floor((y + 7) / 0.5)}>`;
   }
   if (!source?.trim()) throw Error("Enter a prompt.");
   const prompt =
@@ -190,14 +185,12 @@ async function generate(request) {
       spec.output === "text"
         ? null
         : Array.from(
-            { length: spec.output === "human" ? 512 : 128 },
+            { length: 512 },
             (_, i) => tok[`<${spec.output}_motion_id_${i}>`],
           ),
     allowed = motionIds
       ? [...motionIds, end]
       : Array.from({ length: 50257 }, (_, i) => i).concat(end),
-    gaits =
-      request.task === "text-to-robot" ? [tok["<trott>"], tok["<gallop>"]] : [],
     cache = {},
     generated = [],
     rng = random(request.seed || 42);
@@ -231,12 +224,8 @@ async function generate(request) {
       input.dispose();
       mask.dispose();
       position.dispose();
-      let active = step === 0 ? [...allowed, ...gaits] : allowed;
-      if (
-        motionIds &&
-        (step === 0 || (step === 1 && gaits.includes(generated[0])))
-      )
-        active = active.filter((id) => id !== end);
+      let active = allowed;
+      if (motionIds && step === 0) active = active.filter((id) => id !== end);
       const next = choose(output.logits.data, active, request.sample, rng);
       output.logits.dispose();
       generated.push(next);
@@ -258,11 +247,9 @@ async function generate(request) {
     terminated: generated.at(-1) === end,
     tokens: tokenizer.decode(generated),
     source:
-      request.task === "goal-to-robot"
-        ? `Goal: (${request.goal.join(", ")}) metres`
-        : spec.output === "text"
-          ? `${embodiment === "human" ? "Human motion" : "Robot trajectory"} · ${features.length} frames`
-          : request.text,
+      spec.output === "text"
+        ? `Human motion · ${features.length} frames`
+        : request.text,
     origin: "generated",
   };
   if (spec.output === "text") {
@@ -285,16 +272,7 @@ async function generate(request) {
       features = features.map((row) =>
         row.map((v, i) => v * config.std[i] + config.mean[i]),
       );
-    Object.assign(result, {
-      features,
-      embodiment: spec.output,
-      goal: request.goal,
-      gait: generated.includes(tok["<trott>"])
-        ? "trott"
-        : generated.includes(tok["<gallop>"])
-          ? "gallop"
-          : null,
-    });
+    Object.assign(result, { features, embodiment: "human" });
   }
   postMessage({ type: "result", result });
 }

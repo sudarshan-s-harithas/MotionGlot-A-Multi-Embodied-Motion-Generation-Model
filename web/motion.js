@@ -6,18 +6,16 @@ export const chains = [
   [9, 13, 16, 18, 20],
 ];
 export const bones = chains.flatMap((chain, c) =>
-  chain
-    .slice(1)
-    .map((j, i) => ({
-      a: chain[i],
-      b: j,
-      color:
-        c === 0 || c === 3
-          ? "0.82 0.38 0.30 1"
-          : c === 1 || c === 4
-            ? "0.40 0.66 0.80 1"
-            : "0.80 0.93 0.46 1",
-    })),
+  chain.slice(1).map((j, i) => ({
+    a: chain[i],
+    b: j,
+    color:
+      c === 0 || c === 3
+        ? "0.82 0.38 0.30 1"
+        : c === 1 || c === 4
+          ? "0.40 0.66 0.80 1"
+          : "0.80 0.93 0.46 1",
+  })),
 );
 export function humanJoints(rows) {
   let angle = 0,
@@ -46,17 +44,6 @@ export function humanJoints(rows) {
   }
   const floor = Math.min(...frames.map((j) => Math.min(...j.map((p) => p[1]))));
   return frames.map((js) => js.map((p) => [p[0], p[2], p[1] - floor]));
-}
-export function robotFrames(rows) {
-  let x = 0,
-    y = 0,
-    heading = 0;
-  return rows.map((r) => {
-    x += r[0];
-    y += r[1];
-    heading += r[2];
-    return [x, y, heading];
-  });
 }
 export function validateFeatures(rows, dim) {
   if (

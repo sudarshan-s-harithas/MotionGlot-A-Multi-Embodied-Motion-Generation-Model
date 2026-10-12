@@ -1,5 +1,5 @@
-import { MotionViewer } from "./viewer.js";
-import { parseNPY, validateFeatures } from "./motion.js";
+import { MotionViewer } from "./viewer.js?v=human1";
+import { parseNPY, validateFeatures } from "./motion.js?v=human1";
 const $ = (id) => document.getElementById(id),
   viewer = new MotionViewer();
 let worker,
@@ -18,7 +18,6 @@ const suggestions = {
     "How does a person improve leg strength?",
     "How does a person play golf?",
   ],
-  "text-to-robot": ["move forward", "turn left", "move backwards"],
 };
 function status(message, error = false) {
   $("status").textContent = message;
@@ -26,10 +25,8 @@ function status(message, error = false) {
 }
 function updateTask(autoShow = true) {
   const task = $("task").value,
-    caption = task.endsWith("-to-text"),
-    goal = task === "goal-to-robot";
-  $("text-input").hidden = caption || goal;
-  $("goal-input").hidden = !goal;
+    caption = task === "human-to-text";
+  $("text-input").hidden = caption;
   $("motion-input").hidden = !caption;
   $("suggestions").replaceChildren();
   for (const text of suggestions[task] || []) {
@@ -42,7 +39,7 @@ function updateTask(autoShow = true) {
   }
   if (suggestions[task]) $("prompt").value = suggestions[task][0];
   if (caption && autoShow) {
-    const embodiment = task.startsWith("human") ? "human" : "robot";
+    const embodiment = "human";
     if (current?.embodiment !== embodiment) {
       const example = examples.find((x) => x.embodiment === embodiment);
       if (example) show(example);
@@ -54,8 +51,7 @@ async function show(result) {
   try {
     if (viewerReady) await viewer.load(result);
     $("viewer-message").hidden = viewerReady;
-    $("kind").textContent =
-      result.embodiment === "human" ? "HUMAN MOTION" : "ROBOT TRAJECTORY";
+    $("kind").textContent = "HUMAN MOTION";
     $("origin").textContent =
       result.origin === "generated"
         ? "GENERATED IN YOUR BROWSER"
@@ -84,7 +80,7 @@ function setBusy(value) {
     button.disabled = value;
 }
 function startWorker() {
-  worker = new Worker(new URL("./worker.js", import.meta.url), {
+  worker = new Worker(new URL("./worker.js?v=human1", import.meta.url), {
     type: "module",
   });
   worker.onmessage = async ({ data }) => {
@@ -128,20 +124,16 @@ $("generate").onclick = async () => {
           : JSON.parse(await file.text());
         features = features.features || features;
       } else {
-        const embodiment = task.startsWith("human") ? "human" : "robot";
+        const embodiment = "human";
         if (current?.embodiment !== embodiment)
           throw Error(
             "Select an example of the correct embodiment or upload a motion.",
           );
         features = current.features;
       }
-      validateFeatures(features, task.startsWith("human") ? 263 : 3);
+      validateFeatures(features, 263);
     }
-    const goal =
-      task === "goal-to-robot"
-        ? [Number($("goal-x").value), Number($("goal-y").value)]
-        : null;
-    if (!task.endsWith("-to-text") && !goal && !$("prompt").value.trim())
+    if (task !== "human-to-text" && !$("prompt").value.trim())
       throw Error("Enter a prompt.");
     setBusy(true);
     status("Preparing browser inference…");
@@ -150,7 +142,6 @@ $("generate").onclick = async () => {
       task,
       text: $("prompt").value,
       features,
-      goal,
       maxTokens: Number($("length").value),
       sample: $("sampling").checked,
       seed: Math.floor(Math.random() * 1e9),
@@ -200,7 +191,7 @@ $("download").onclick = () => {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 };
 try {
-  examples = await (await fetch("./assets/examples.json")).json();
+  examples = await (await fetch("./assets/examples.json?v=human1")).json();
   for (const example of examples) {
     const button = document.createElement("button");
     button.className = "example-card";
@@ -216,10 +207,6 @@ try {
         ? `${example.embodiment}-to-text`
         : example.task;
       updateTask(false);
-      if (example.goal) {
-        $("goal-x").value = example.goal[0];
-        $("goal-y").value = example.goal[1];
-      }
       $("prompt").value = example.source;
       await show(example);
       status("Showing a checkpoint example. Generate to try your own input.");
