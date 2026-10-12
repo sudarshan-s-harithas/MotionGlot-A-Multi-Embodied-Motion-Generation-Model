@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Try MotionGlot in your browser. Generate human motion from text or questions, or describe a human motion. No installation, no physics simulation."
+      content="Try MotionGlot in your browser. Generate human motion from text or situational questions, or caption a human motion. No installation required."
     />
     <title>MotionGlot · Interactive demo</title>
-    <link rel="stylesheet" href="./style.css?v=human1" />
+    <link rel="stylesheet" href="./style.css?v=paper1" />
   </head>
   <body>
     <header>
       <a class="brand" href="./"
         ><span class="brand-mark">M<span>G</span></span
-        >MotionGlot</a
+        ><span class="brand-name">MotionGlot</span></a
       >
       <nav aria-label="Research links">
         <a href="https://arxiv.org/abs/2410.16623">Paper ↗</a
@@ -28,24 +28,23 @@
     </header>
     <main>
       <div class="intro">
-        <div class="eyebrow">ONE MODEL · HUMAN MOTION · THREE TASKS</div>
-        <h1>Put language<br />in motion<span>.</span></h1>
-        <p>
-          Generate a human action from language.<br />Or give MotionGlot a
-          motion and ask what it means.
+        <h1 class="motionglot-title">MotionGlot</h1>
+        <p class="paper-title">A Multi-Embodied Motion Generation Model</p>
+        <p class="intro-description">
+          Generate human motion from descriptions or situational questions, and
+          translate motion into text.
         </p>
         <div class="badges">
-          <span><i></i> Runs in your browser</span><span>Physics disabled</span
-          ><span>Open source</span>
+          <span><i></i> Runs in your browser</span>
         </div>
       </div>
       <div class="workspace">
         <section class="controls" aria-label="Motion generation controls">
           <label for="task">01 <span>Choose a task</span></label
           ><select id="task">
-            <option value="text-to-human">Text → human motion</option>
-            <option value="question-to-human">Question → human motion</option>
-            <option value="human-to-text">Human motion → text</option>
+            <option value="text-to-human">Text-to-Human Motion</option>
+            <option value="question-to-human">Q&amp;A with Human Motion</option>
+            <option value="human-to-text">Human Motion Captioning</option>
           </select>
           <div id="text-input">
             <label for="prompt">02 <span>Describe your motion</span></label
@@ -146,8 +145,7 @@ A person walks forward</textarea
           <h3>What you’re seeing</h3>
           <p>
             Human playback shows a 22-joint skeleton. Pause, scrub through
-            frames, and orbit the camera to explore the motion. Physics stays
-            disabled throughout playback.
+            frames, and orbit the camera to explore the motion.
           </p>
         </div>
       </div>
