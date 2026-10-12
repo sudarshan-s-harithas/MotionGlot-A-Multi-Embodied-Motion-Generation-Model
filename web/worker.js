@@ -257,7 +257,12 @@ async function generate(request) {
     task: request.task,
     terminated: generated.at(-1) === end,
     tokens: tokenizer.decode(generated),
-    source: request.text,
+    source:
+      request.task === "goal-to-robot"
+        ? `Goal: (${request.goal.join(", ")}) metres`
+        : spec.output === "text"
+          ? `${embodiment === "human" ? "Human motion" : "Robot trajectory"} · ${features.length} frames`
+          : request.text,
     origin: "generated",
   };
   if (spec.output === "text") {
